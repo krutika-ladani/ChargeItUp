@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,16 +74,23 @@
             z-index: 2;
             margin-top:34px;
         }
+        .book
+        {
+            margin: auto;
+            background-color: rgb(9, 49, 95, 0.3);
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="menubar">
         <img src="logo.png" height="42px">
         <ul class="nav">
-            <li id="curr"><a href="navigate.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="aboutus.html">AboutUs</a></li>
-			<li><a href="welcome.html">Logout</a></li>
+            <li id="curr"><a href="navigate.php">Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="aboutus.php">AboutUs</a></li>
+			<li><a href="index.php">Logout</a></li>
         </ul>
     </div>
     <div id="map"></div>
@@ -99,12 +106,12 @@
         var marker4 = L.marker([23.000, 72.620]).addTo(map);
         var marker5 = L.marker([22.990, 72.500]).addTo(map);
         var marker6 = L.marker([23.025, 72.400]).addTo(map);
-        marker1.bindPopup("<b>TATA POWER head branch</b><br>Do you want to book a slot here?").openPopup();
-        marker2.bindPopup("<b>IOCL POWER head branch</b><br>Do you want to book a slot here?").openPopup();
-        marker3.bindPopup("<b>GMRDS lab Charging Station POWER head branch</b><br>Do you want to book a slot here?").openPopup();
-        marker4.bindPopup("<b>IOCL Kailash Petrolium Charging Station</b><br>Do you want to book a slot here?").openPopup();
-        marker5.bindPopup("<b>Narayani Hotels and Resorts Charging Station</b><br>Do you want to book a slot here?").openPopup();
-        marker6.bindPopup("<b>TATA POWER</b><br>Do you want to book a slot here?").openPopup();
+        marker1.bindPopup("<b>TATA POWER head branch</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
+        marker2.bindPopup("<b>IOCL POWER head branch</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
+        marker3.bindPopup("<b>GMRDS lab Charging Station POWER head branch</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
+        marker4.bindPopup("<b>IOCL Kailash Petrolium Charging Station</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
+        marker5.bindPopup("<b>Narayani Hotels and Resorts Charging Station</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
+        marker6.bindPopup("<b>TATA POWER</b><br>Do you want to book a slot here?<br><a href='booking.php' class='book'>book now</a>").openPopup();
 
         var popup = L.popup();
         function onMapClick(e) {
@@ -118,4 +125,4 @@
             
     </script>
 </body>
-</html>
+</php>

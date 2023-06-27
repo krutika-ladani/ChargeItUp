@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE php>
 <php lang="en">
 <head>
@@ -25,7 +28,7 @@
             height: 100vh;
             width: 100vw;
             margin: 0px;
-            background-color: azure;
+            background-color: white;
             overflow: hidden;
         }
         .menubar
@@ -83,11 +86,15 @@
             border-bottom: 6px solid rgb(6, 47, 71);
             background-color: rgb(255, 255, 255);
             padding:30px;
-            border-radius: 50px;
+          
         }
         input
         {
-            margin: 10px 0px;
+            margin: 6px 0px;
+            width:200px;
+            border:3px solid rgb(10, 150, 109, 0.3);
+            padding: 4px 10px;
+            border-radius:20px;
         }
         button
         {
@@ -103,11 +110,9 @@
         {
             text-align: center;
             font-size: 25px;
-            color: rgb(9, 9, 94);
-            margin-bottom: 0px;
-            position: relative;
-            bottom: 12px;
-            height:max-content;
+            color: black;
+            height:30px;
+            margin:auto;
         }
     </style>
 </head>
@@ -115,56 +120,46 @@
     <div class="menubar">
         <img src="logo.png" height="42px">
         <ul class="nav">
-            <li><a href="navigate.php">Home</a></li>
-            <li  id="curr"><a href="profile.php">Profile</a></li>
+            <li id="curr"><a href="navigate.php">Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
             <li><a href="aboutus.php">AboutUs</a></li>
 			<li><a href="index.php">Logout</a></li>
         </ul>
     </div>
-    <form method="get"></form>
-    <div style="text-align: center; margin-top: 100px; margin-bottom:20px;">
-        <span class="material-symbols-outlined">
-        person
-        </span>
-    </div>
-    <div id="update"></div>
+    <form method="get">
+    <img src="book.jpg" height="170px" style="display:block; margin:auto; margin-top:50px;">
+    <div style="text-align: center; margin-top: 0px;">
+        <div id="update"></div>
         <table>
             <tr>
                 <td>Name:</td>
-                <td><input type="text" name="" id="" placeholder="Aarna Trivedi"></td>
+                <td><input type="text" name="" id="" placeholder=<?php echo "'".$_SESSION["name"]."'";?>></td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><input type="email" name="" id="" placeholder="aarnatri@gmail.com"></td>
+                <td><input type="email" name="" id="" placeholder=<?php echo "'".$_SESSION["email"]."'";?>></td>
             </tr>
             <tr>
-                <td>Date of Birth:</td>
-                <td><input type="date" name="" id="" placeholder="12-22-2000"></td>
+                <td>Date:</td>
+                <td><input type="date" name="" id=""></td>
             </tr>
             <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" name="gen" id="">male 
-                    <input type="radio" name="gen" id="" checked>female 
-                    <input type="radio" name="gen" id="">non-binary
-                </td>
+                <td>Start time:</td>
+                <td><input type="time" name="" id=""></td>
             </tr>
             <tr>
-                <td>State:</td>
-                <td><input type="text" name="" id="" placeholder="Gujarat"></td>
-            </tr>
-            <tr>
-                <td>City:</td>
-                <td><input type="text" name="" id="" placeholder="Ahmedabad"></td>
+                <td>End-time:</td>
+                <td><input type="time" name="" id=""></td>
             </tr>
         </table>
-        <div style="text-align:center; margin-top: 8px;"><button onclick="update()">Update</button></div>
+        <div style="text-align:center; margin-top: 8px;"><button onclick="book()">Book</button></div>
     </form>
     <script>
-        function update()
+        function book()
         {
+            alert("Your booking is confirmed!");
             var txt=document.getElementById("update");
-            txt.innerphp = "Profile updated successfully!";
+            txt.innertext = "Your booking is confirmed!";
         }
     </script>
 </body>

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
             height: 100vh;
             width: 100vw;
             margin: 0px;
-            background-color: azure;
+            background-color: white;
 
         }
         .menubar
@@ -62,7 +62,7 @@
         }
         .text
         {
-            font-size: 22px;
+            font-size: 18px;
             margin:80px;
             margin-top: 90px;
             line-height: 32px;
@@ -78,12 +78,12 @@
 </head>
 <body>
     <div class="menubar">
-        <img src="logo.jpeg" height="42px">
+        <img src="logo.png" height="42px">
         <ul class="nav">
-            <li><a href="navigate.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li id="curr" ><a href="aboutus.html">AboutUs</a></li>
-			<li><a href="welcome.html">Logout</a></li>
+            <li><a href="navigate.php">Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li id="curr" ><a href="aboutus.php">AboutUs</a></li>
+			<li><a href="index.php">Logout</a></li>
         </ul>
     </div>
     <div class="text">
@@ -105,4 +105,4 @@ Thank you for choosing our website as your trusted companion in your electric ve
 <br> <span style="font-size:35px;"> Happy charging! </span>
     </div>
 </body>
-</html>
+</php>

@@ -334,6 +334,8 @@
                     if($result)
                     {
                         $_SESSION["email"] = $email;
+                        $_SESSION["name"] = $name;
+
                         mysqli_close($conn);
 						echo "
 							<script>
@@ -387,13 +389,14 @@
                 }
                 else
                 {
-                    $sql = "select email,pswd from login_credentials where email='$email'";
+                    $sql = "select email,pswd,uname from login_credentials where email='$email'";
                     $result = mysqli_query($conn, $sql);
                     if($row = mysqli_fetch_assoc($result))
                     {
                         if($row['pswd']==$pswd)
                         {
                             $_SESSION["email"] = $email;
+                            $_SESSION["name"] = $row['uname'];
                             mysqli_close($conn);
                             echo "
 								<script>
